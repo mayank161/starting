@@ -1,7 +1,7 @@
 
 import java.util.*;
 class Main {
-  public int add(int a,int b) { 
-    return a + b;
+  public int opp(int a,int b,int c) { 
+    return a + b - c;
   }
 }
