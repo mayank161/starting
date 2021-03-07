@@ -58,7 +58,35 @@
             </script>
 
         </div>
-        
+        <div>
+            <h1 style="padding-left: 3%;">USER DETAILS</h1>
+            <div id="details" style="padding-left: 3%;color: cyan;"></div>
+            
+            <script>
+                const name = document.getElementById("name");
+                const email = document.getElementById("email");
+                const phone = document.getElementById("phone");
+                const date = document.getElementById("date");
+                const time = document.getElementById("time");
+                const button = document.getElementById("button");
+                const details = document.getElementById("details");
+                button.onclick = () => {
+                    if(name.value && email.value && phone.value && date.value && time.value) {
+                        localStorage.setItem('NAME', name.value);
+                        localStorage.setItem('EMAIL', email.value);
+                        localStorage.setItem('DATE', date.value);
+                        localStorage.setItem('TIME', time.value);
+                        location.reload();
+                    }
+                };
+
+                for(let i=0; i<localStorage.length; i++) {
+                    const key = localStorage.key(i);
+                    details.innerHTML += `${key}: ${localStorage.getItem(key)} <br><br>`;
+                }
+            </script>
+
+        </div>
     </div>
 </body>
 </html>
