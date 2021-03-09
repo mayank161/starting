@@ -28,7 +28,8 @@ const button = document.getElementById("button");
 const NDetails = document.getElementById('namO');
 const EDetails = document.getElementById('emailO');
 const PDetails = document.getElementById('phonO')
-
+const Edit = document.getElementById('edit');
+const Delete = document.getElementById('delete');
 button.onclick = () => {
     if(names != null && email != null && phone != null /*&& date != null && time != null*/) {
         names.push(`${document.getElementById("name").value}`);
@@ -49,9 +50,12 @@ button.onclick = () => {
     }
 };
 
+// adding data in front page
 for(let i=0; i<names.length; i++) {
     if(NDetails === null) {break;}
     NDetails.innerHTML += `${names[i]} <br>`;
+    Edit.innerHTML += `<button id = ${i}>EDIT</button> <br>`
+    Delete.innerHTML += `<button id = ${i}>DELETE</button> <br>`
 }
 
 for(let i=0; i<email.length; i++) {
@@ -62,4 +66,14 @@ for(let i=0; i<email.length; i++) {
 for(let i=0; i<phone.length; i++) {
     if(PDetails === null) {break;}
     PDetails.innerHTML += `${phone[i]} <br>`;
+}
+
+document.getElementById('delete').onclick = ()=> {
+    names.pop(names.length - 1);
+    email.pop(email.length - 1);
+    phone.pop(phone.length - 1);
+    localStorage.setItem('NAME', JSON.stringify(names));
+    localStorage.setItem('EMAIL', JSON.stringify(email));
+    localStorage.setItem('PHONE', JSON.stringify(phone));
+    location.reload();
 }

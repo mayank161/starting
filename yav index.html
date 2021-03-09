@@ -20,25 +20,27 @@
             <p>Book a call slot and our representative will call you within 1hr of selected time.</p>
             Name : <input type="text" name="name" id="name" >
             <br><br>
-            Email : <input type="text" name="name" id="email" >
+            Email : <input type="email" name="name" id="email" >
             <br><br>
-            Phone : <input type="text" name="name" id="phone">
+            Phone : <input type="number" name="name" id="phone">
             <br>
             <p style="text-align: center;"> Time for call</p>
             <input type="date" name="date" id="date"> <input type="time" name="time" id="time">
             <br><br><br>
-            <button id="button" style="background-color :lightslategray; height: 100%;width: 10%;"> <p style="color: lime;">BOOK A CALL</p></button>
+            <button id="button" style="background-color :lightslategray; height: 100%;width: 20%;"> <p style="color: lime;">BOOK A CALL</p></button>
         </div>
         
         <div>
-            <h1 style="padding-left: 3%;">USER DETAILS</h1>
+            <h1 style="margin-left: 50%;">USER DETAILS</h1>
             
             <table class="list" >
                 <thead>
-                    <tr>
+                    <tr id="add">
                         <th>NAME </th>
                         <th>email</th>
                         <th>phone</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -46,6 +48,8 @@
                         <th id="namO"></th>
                         <th id="emailO"></th>
                         <th id="phonO"></th>
+                        <th id="edit"></th>
+                        <th id="delete"></th>
                     </tr>
                 </tbody>
             </table>
