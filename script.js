@@ -25,8 +25,9 @@ if(localTime === null) { time = []; }
 else { time = JASON.parse(localDate); } */
 
 const button = document.getElementById("button");
-const details = document.getElementById("details");
-
+const NDetails = document.getElementById('namO');
+const EDetails = document.getElementById('emailO');
+const PDetails = document.getElementById('phonO')
 
 button.onclick = () => {
     if(names != null && email != null && phone != null /*&& date != null && time != null*/) {
@@ -48,7 +49,17 @@ button.onclick = () => {
     }
 };
 
-for(let i=0; i<localStorage.length; i++) {
-    const key = localStorage.key(i);
-    details.innerHTML += `${key}: ${localStorage.getItem(key)} <br><br>`;
+for(let i=0; i<names.length; i++) {
+    if(NDetails === null) {break;}
+    NDetails.innerHTML += `${names[i]} <br>`;
+}
+
+for(let i=0; i<email.length; i++) {
+    if(EDetails === null) {break;}
+    EDetails.innerHTML += `${email[i]} <br>`;
+}
+
+for(let i=0; i<phone.length; i++) {
+    if(PDetails === null) {break;}
+    PDetails.innerHTML += `${phone[i]} <br>`;
 }

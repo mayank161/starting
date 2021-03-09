@@ -21,4 +21,20 @@
     text-align: center;
     color: lime;
 }
+body > table{
+    width: 80%;
+}
 
+table{
+    border-collapse: collapse;
+}
+table.list{
+    width:35%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    background-color: chartreuse;
+}
